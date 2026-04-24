@@ -1,0 +1,279 @@
+.main {
+  min-height: 100svh;
+  padding-top: 100px;
+}
+
+/* ─── Hero ─── */
+.hero {
+  padding: 60px 40px 48px;
+  border-bottom: 1px solid var(--border);
+}
+
+.heroMeta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+.index {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.heroTags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  flex: 1;
+}
+
+.tag {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  padding: 4px 10px;
+  border-radius: 100px;
+}
+
+.year {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-left: auto;
+}
+
+.title {
+  font-size: clamp(36px, 6vw, 80px);
+  font-weight: 800;
+  line-height: 1.0;
+  letter-spacing: -0.03em;
+  color: var(--text);
+  margin-bottom: 16px;
+  max-width: 900px;
+}
+
+.subtitle {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--text-muted);
+  letter-spacing: 0.01em;
+}
+
+/* ─── Cover ─── */
+.cover {
+  width: 100%;
+  aspect-ratio: 16 / 7;
+  overflow: hidden;
+  background: var(--bg-card);
+}
+
+.coverImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(10%);
+  transition: filter 0.4s;
+}
+
+.coverImg:hover {
+  filter: grayscale(0%);
+}
+
+/* ─── Body ─── */
+.body {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 0;
+  padding: 64px 40px;
+  border-bottom: 1px solid var(--border);
+}
+
+.sidebar {
+  padding-right: 48px;
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.sideSection {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sideLabel {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.sideValue {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--text);
+}
+
+.sideTags {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sideTag {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--text);
+}
+
+.content {
+  padding-left: 64px;
+  max-width: 640px;
+}
+
+.paragraph {
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.75;
+  color: var(--text);
+  margin-bottom: 28px;
+  opacity: 0.85;
+}
+
+/* ─── Image grid ─── */
+.imageGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 48px;
+}
+
+.imageGrid :last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+}
+
+.contentImg {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 4px;
+  filter: grayscale(15%);
+  transition: filter 0.4s, transform 0.4s;
+}
+
+.contentImg:hover {
+  filter: grayscale(0%);
+  transform: scale(1.01);
+}
+
+/* ─── Bottom nav ─── */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 40px;
+}
+
+.navBack {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  transition: color 0.2s;
+}
+
+.navBack:hover {
+  color: var(--text);
+}
+
+.navNext {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  transition: opacity 0.2s;
+}
+
+.navNext:hover {
+  opacity: 0.7;
+}
+
+.navNextLabel {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.navNextTitle {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+
+/* ─── Not found ─── */
+.notFound {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100svh;
+  gap: 16px;
+  color: var(--text-muted);
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 900px) {
+  .body {
+    grid-template-columns: 1fr;
+    padding: 48px 24px;
+  }
+
+  .sidebar {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    padding-right: 0;
+    padding-bottom: 32px;
+    margin-bottom: 40px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .content {
+    padding-left: 0;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    padding: 48px 24px 40px;
+  }
+
+  .imageGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .imageGrid :last-child:nth-child(odd) {
+    grid-column: auto;
+  }
+
+  .nav {
+    padding: 32px 24px;
+  }
+
+  .cover {
+    aspect-ratio: 4 / 3;
+  }
+}

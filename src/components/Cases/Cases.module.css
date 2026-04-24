@@ -1,0 +1,21 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 38px;
+  padding: 0 30px 160px;
+}
+
+@media (max-width: 767px) {
+  .section {
+    padding: 0 16px 100px;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    gap: 16px;
+    padding: 0 12px 80px;
+  }
+}
