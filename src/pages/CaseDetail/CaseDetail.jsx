@@ -15,87 +15,42 @@ export default function CaseDetail() {
     )
   }
 
-  const { index, title, subtitle, year, description, tags, coverSeed, images } = caseData
+  const { title, description, sections } = caseData
+
+  const currentIndex = cases.findIndex((c) => c.id === id)
+  const next = cases[(currentIndex + 1) % cases.length]
 
   return (
     <main className={styles.main}>
-      <div className={styles.hero}>
-        <div className={styles.heroMeta}>
-          <span className={styles.index}>{index}</span>
-          <div className={styles.heroTags}>
-            {tags.map((tag) => (
-              <span key={tag} className={styles.tag}>{tag}</span>
-            ))}
-          </div>
-          <span className={styles.year}>{year}</span>
-        </div>
-
+      <div className={styles.container}>
         <h1 className={styles.title}>{title}</h1>
-        <p className={styles.subtitle}>{subtitle}</p>
-      </div>
 
-      <div className={styles.cover}>
-        <img
-          src={`https://picsum.photos/seed/${coverSeed}/1400/800`}
-          alt={title}
-          className={styles.coverImg}
-        />
-      </div>
-
-      <div className={styles.body}>
-        <div className={styles.sidebar}>
-          <div className={styles.sideSection}>
-            <span className={styles.sideLabel}>Year</span>
-            <span className={styles.sideValue}>{year}</span>
-          </div>
-          <div className={styles.sideSection}>
-            <span className={styles.sideLabel}>Disciplines</span>
-            <div className={styles.sideTags}>
-              {tags.map((tag) => (
-                <span key={tag} className={styles.sideTag}>{tag}</span>
-              ))}
-            </div>
-          </div>
-          <div className={styles.sideSection}>
-            <span className={styles.sideLabel}>Role</span>
-            <span className={styles.sideValue}>Lead Product Designer</span>
-          </div>
-        </div>
-
-        <div className={styles.content}>
-          {description.map((paragraph, i) => (
-            <p key={i} className={styles.paragraph}>{paragraph}</p>
-          ))}
-
-          <div className={styles.imageGrid}>
-            {images.map((seed, i) => (
-              <img
-                key={seed}
-                src={`https://picsum.photos/seed/${seed + i}/800/560`}
-                alt={`${title} detail ${i + 1}`}
-                className={styles.contentImg}
-                loading="lazy"
-              />
+        <div className={styles.aboutCard}>
+          <span className={styles.aboutLabel}>О проекте</span>
+          <div className={styles.description}>
+            {description.map((p, i) => (
+              <p key={i} className={styles.paragraph}>{p}</p>
             ))}
           </div>
         </div>
+
+        {sections && sections.map((src, i) => (
+          <img
+            key={i}
+            src={src}
+            alt={`${title} — ${i + 1}`}
+            className={styles.sectionImg}
+            loading="lazy"
+          />
+        ))}
       </div>
 
-      <div className={styles.nav}>
-        <Link to="/" className={styles.navBack}>
-          ← All projects
+      <div className={styles.bottomNav}>
+        <Link to="/" className={styles.navBack}>← All projects</Link>
+        <Link to={`/case/${next.id}`} className={styles.navNext}>
+          <span className={styles.navNextLabel}>Next project</span>
+          <span className={styles.navNextTitle}>{next.title} →</span>
         </Link>
-
-        {(() => {
-          const currentIndex = cases.findIndex((c) => c.id === id)
-          const next = cases[(currentIndex + 1) % cases.length]
-          return (
-            <Link to={`/case/${next.id}`} className={styles.navNext}>
-              <span className={styles.navNextLabel}>Next project</span>
-              <span className={styles.navNextTitle}>{next.title} →</span>
-            </Link>
-          )
-        })()}
       </div>
     </main>
   )

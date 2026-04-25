@@ -5,14 +5,14 @@
 }
 
 :root {
-  --bg: #faf7f6;
+  --bg: #f6f7fa;
   --bg-card: #ffffff;
-  --text: #2e2727;
-  --muted: #be9898;
-  --tag-bg: #f8f3f3;
-  --btn-bg: #f5dedb;
+  --text: #27272e;
+  --muted: #989bbe;
+  --tag-bg: #dbdef5;
+  --btn-bg: #dbdef5;
   --nda-red: #d70000;
-  --border: rgba(46, 39, 39, 0.08);
+  --border: rgba(39, 39, 46, 0.08);
   --font: 'Manrope', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   --card-radius: 40px;
 }
@@ -56,4 +56,10 @@ button {
 ::selection {
   background: var(--text);
   color: var(--bg);
+}
+
+@media (max-width: 767px) {
+  :root {
+    --card-radius: 32px;
+  }
 }

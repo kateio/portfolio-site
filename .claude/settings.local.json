@@ -3,7 +3,20 @@
     "allow": [
       "WebFetch(domain:robotdesigner.webflow.io)",
       "mcp__figma__get_design_context",
-      "mcp__figma__get_screenshot"
+      "mcp__figma__get_screenshot",
+      "mcp__figma__get_metadata",
+      "Bash(curl -s -o /Users/kateiogansen/prj/claude-code/portfolio/public/mockups/case-01.png \"https://www.figma.com/api/mcp/asset/41aeff9c-bb54-4f83-a6d7-eaa281296d51\")",
+      "Bash(curl -s -o /Users/kateiogansen/prj/claude-code/portfolio/public/mockups/case-02.png \"https://www.figma.com/api/mcp/asset/a5608ac5-2be7-42e9-a899-ef7b0016142a\")",
+      "Bash(curl -s -o /Users/kateiogansen/prj/claude-code/portfolio/public/mockups/case-03.png \"https://www.figma.com/api/mcp/asset/29b231db-3bac-437b-8ff8-83a0451bd155\")",
+      "Bash(curl -s -o /Users/kateiogansen/prj/claude-code/portfolio/public/mockups/case-04.png \"https://www.figma.com/api/mcp/asset/45960eb0-7e05-4518-8795-6e68707938fa\")",
+      "Bash(wait)",
+      "Bash(npm run *)",
+      "Bash(curl -s -o /Users/kateiogansen/prj/claude-code/portfolio/public/mockups/case-04.png \"https://www.figma.com/api/mcp/asset/36527c7e-829d-4c31-97a3-1b2b0629f782\")",
+      "Bash(curl *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "mcp__figma__generate_figma_design",
+      "Bash(python3 -c ' *)"
     ]
   }
 }
