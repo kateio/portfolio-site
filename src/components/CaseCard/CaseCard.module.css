@@ -9,6 +9,21 @@
   min-height: 600px;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    @keyframes cardScrollExit {
+      from { transform: scale(1); }
+      to   { transform: scale(0.88); }
+    }
+
+    .card {
+      animation: cardScrollExit linear both;
+      animation-timeline: view();
+      animation-range: exit 0% exit 100%;
+    }
+  }
+}
+
 /* ── Image area ── */
 .imageArea {
   position: relative;
@@ -88,7 +103,7 @@
 
 .tag {
   background: var(--tag-bg);
-  border-radius: 12px;
+  border-radius: 50px;
   padding: 7px 14px;
   font-size: 14px;
   font-weight: 600;
@@ -104,7 +119,7 @@
   font-weight: 600;
   color: var(--muted);
   background: var(--tag-bg);
-  border-radius: 12px;
+  border-radius: 50px;
   padding: 12px 20px;
   align-self: flex-start;
   text-decoration: none;

@@ -6,6 +6,21 @@
   min-height: 600px;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    @keyframes heroScrollExit {
+      from { transform: scale(1); }
+      to   { transform: scale(0.88); }
+    }
+
+    .hero {
+      animation: heroScrollExit linear both;
+      animation-timeline: view();
+      animation-range: exit 0% exit 100%;
+    }
+  }
+}
+
 .inner {
   width: 100%;
   max-width: 1280px;

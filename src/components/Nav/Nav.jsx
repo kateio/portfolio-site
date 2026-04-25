@@ -14,7 +14,7 @@ export default function Nav() {
     <header className={styles.nav}>
       <div className={styles.inner}>
         <Link to="/" className={styles.identity}>
-          <div className={styles.avatar} aria-hidden="true" />
+          <img src="/avatar.png" alt="Екатерина Иогансен" className={styles.avatar} />
           <span className={styles.name}>Екатерина Иогансен</span>
         </Link>
         <div className={styles.actions}>
