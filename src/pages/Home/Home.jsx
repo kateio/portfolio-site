@@ -11,8 +11,8 @@ export default function Home() {
         <div className={styles.footerInner}>
           <div>
             <div className={styles.footerBlock}>
-              <span className={styles.footerLabel}>Telegram &amp; Instagram</span>
-              <span className={styles.footerValue}>@kateiogansen</span>
+              <span className={styles.footerLabel}>Telegram</span>
+              <span className={styles.footerValue}>@katiogansen</span>
             </div>
             <div className={styles.footerBlock} style={{ marginTop: 32 }}>
               <span className={styles.footerLabel}>Email</span>

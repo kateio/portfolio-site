@@ -21,7 +21,7 @@ export default function Nav() {
           <a href="https://t.me/katiogansen" target="_blank" rel="noopener noreferrer" className={styles.btn}>
             tg: @katiogansen
           </a>
-          <a href="/resume.pdf" download className={styles.btn}>
+          <a href="https://drive.google.com/file/d/1Ytb6ITqmK0vNy7VfCjySdrdX2c1ZT--5/view?usp=sharing" target="_blank" rel="noopener noreferrer" className={styles.btn}>
             <DownloadIcon />
             Резюме
           </a>

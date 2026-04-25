@@ -19,6 +19,7 @@ export default function CaseDetail() {
 
   const currentIndex = cases.findIndex((c) => c.id === id)
   const next = cases[(currentIndex + 1) % cases.length]
+  const hasNextPage = Boolean(next.sections)
 
   return (
     <main className={styles.main}>
@@ -47,10 +48,12 @@ export default function CaseDetail() {
 
       <div className={styles.bottomNav}>
         <Link to="/" className={styles.navBack}>← All projects</Link>
-        <Link to={`/case/${next.id}`} className={styles.navNext}>
-          <span className={styles.navNextLabel}>Next project</span>
-          <span className={styles.navNextTitle}>{next.title} →</span>
-        </Link>
+        {hasNextPage && (
+          <Link to={`/case/${next.id}`} className={styles.navNext}>
+            <span className={styles.navNextLabel}>Next project</span>
+            <span className={styles.navNextTitle}>{next.title} →</span>
+          </Link>
+        )}
       </div>
     </main>
   )
