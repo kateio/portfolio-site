@@ -62,7 +62,7 @@
 
 .year {
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 400;
   color: var(--muted);
   line-height: 1.6;
 }
@@ -72,14 +72,14 @@
   align-items: center;
   gap: 4px;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 400;
   color: var(--nda-red);
   line-height: 1.6;
 }
 
 .title {
   font-size: 40px;
-  font-weight: 700;
+  font-weight: 500;
   color: var(--text);
   letter-spacing: -1px;
   line-height: 1.14;
@@ -88,7 +88,7 @@
 
 .desc {
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 400;
   color: var(--muted);
   line-height: 1.5;
   margin-bottom: 24px;
@@ -103,10 +103,10 @@
 
 .tag {
   background: var(--bg);
-  border-radius: 50px;
+  border-radius: 8px;
   padding: 7px 14px;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 400;
   color: var(--muted);
   white-space: nowrap;
 }
@@ -117,10 +117,10 @@
   gap: 8px;
   margin-top: 32px;
   font-size: 16px;
-  font-weight: 500;
-  color: var(--text);
+  font-weight: 400;
+  color: var(--btn-text);
   background: var(--btn-bg);
-  border-radius: 55px;
+  border-radius: 12px;
   padding: 12px 18px;
   align-self: flex-start;
   white-space: nowrap;

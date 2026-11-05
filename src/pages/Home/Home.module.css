@@ -28,16 +28,23 @@
 
 .footerLabel {
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 400;
   color: var(--muted);
 }
 
 .footerValue {
   font-size: 40px;
-  font-weight: 700;
+  font-weight: 500;
   letter-spacing: -0.5px;
   line-height: 1.4;
   color: var(--text);
+  text-decoration: none;
+  width: fit-content;
+  transition: color 0.15s ease;
+}
+
+.footerValue:hover {
+  color: var(--muted);
 }
 
 .footerRight {

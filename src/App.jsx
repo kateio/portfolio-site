@@ -3,6 +3,7 @@ import { useEffect } from 'react'
 import Home from './pages/Home/Home'
 import CaseDetail from './pages/CaseDetail/CaseDetail'
 import Nav from './components/Nav/Nav'
+import LanguageProvider from './i18n/LanguageProvider'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -14,14 +15,16 @@ function ScrollToTop() {
 
 function App() {
   return (
-    <BrowserRouter>
-      <ScrollToTop />
-      <Nav />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/case/:id" element={<CaseDetail />} />
-      </Routes>
-    </BrowserRouter>
+    <LanguageProvider>
+      <BrowserRouter>
+        <ScrollToTop />
+        <Nav />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/case/:id" element={<CaseDetail />} />
+        </Routes>
+      </BrowserRouter>
+    </LanguageProvider>
   )
 }
 

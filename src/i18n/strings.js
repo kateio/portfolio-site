@@ -1,0 +1,62 @@
+const LINKEDIN = { href: 'https://www.linkedin.com/in/ekaterina-iogansen-57b682222/', value: 'ekaterina-iogansen' }
+const TELEGRAM = { href: 'https://t.me/katiogansen', value: '@katiogansen' }
+const EMAIL = { href: 'mailto:kate.iogansen@gmail.com', value: 'kate.iogansen@gmail.com' }
+const RESUME_RU = 'https://drive.google.com/file/d/1ZRVV2OjK0VkuOSJBj_FdY30avT10G1-5/view?usp=sharing'
+const RESUME_EN = 'https://drive.google.com/file/d/1FZG1lnJLBb3YjRXYJxq58r7QxGEm4Tkd/view?usp=sharing'
+
+export const strings = {
+  ru: {
+    documentTitle: 'Екатерина Иогансен — Product Designer',
+    name: 'Екатерина Иогансен',
+    contacts: 'Контакты',
+    contactLinks: [
+      { id: 'linkedin', label: 'LinkedIn', ...LINKEDIN },
+      { id: 'email', label: 'Почта', ...EMAIL },
+      { id: 'telegram', label: 'Телеграм', ...TELEGRAM },
+      { id: 'resume', label: 'Резюме', value: 'Открыть', href: RESUME_RU },
+    ],
+    closeLabel: 'Закрыть',
+    switchTo: 'EN',
+    switchLabel: 'Switch to English',
+    heroRole: 'Product Designer',
+    heroExperience: '4+ года, ex Т-Банк, ex Авито',
+    heroText: 'Проектирую продукты от\u00a0исследования до\u00a0релиза. Собираю прототипы с\u00a0помощью\u00a0AI',
+    footerTelegram: 'Телеграм',
+    footerEmail: 'Почта',
+    viewCase: 'Смотреть кейс →',
+    uiCollection: 'UI Collection',
+    mockupAlt: (title) => `${title}: макет`,
+    aboutProject: 'О проекте',
+    allProjects: '← Все проекты',
+    nextProject: 'Следующий проект',
+    caseNotFound: 'Кейс не найден.',
+    backHome: '← На главную',
+  },
+  en: {
+    documentTitle: 'Ekaterina Iogansen — Product Designer',
+    name: 'Ekaterina Iogansen',
+    contacts: 'Contacts',
+    contactLinks: [
+      { id: 'linkedin', label: 'LinkedIn', ...LINKEDIN },
+      { id: 'email', label: 'Email', ...EMAIL },
+      { id: 'telegram', label: 'Telegram', ...TELEGRAM },
+      { id: 'resume', label: 'CV', value: 'Open', href: RESUME_EN },
+    ],
+    closeLabel: 'Close',
+    switchTo: 'RU',
+    switchLabel: 'Переключить на русский',
+    heroRole: 'Product Designer',
+    heroExperience: '4+ years, ex T-Bank, ex Avito',
+    heroText: 'I design products end to end, from research to release. Building prototypes with\u00a0AI',
+    footerTelegram: 'Telegram',
+    footerEmail: 'Email',
+    viewCase: 'View case →',
+    uiCollection: 'UI Collection',
+    mockupAlt: (title) => `${title} mockup`,
+    aboutProject: 'About the project',
+    allProjects: '← All projects',
+    nextProject: 'Next project',
+    caseNotFound: 'Case not found.',
+    backHome: '← Back to home',
+  },
+}

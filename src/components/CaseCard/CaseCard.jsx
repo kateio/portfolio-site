@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom'
+import { localizeCase } from '../../data/cases'
+import { useLanguage } from '../../i18n/useLanguage'
 import styles from './CaseCard.module.css'
 
 function LockIcon() {
@@ -10,7 +12,8 @@ function LockIcon() {
 }
 
 export default function CaseCard({ caseData }) {
-  const { id, title, year, isNDA, shortDesc, tags, mockupImage, mockupBg } = caseData
+  const { lang, t } = useLanguage()
+  const { id, title, year, isNDA, shortDesc, tags, mockupImage, mockupBg } = localizeCase(caseData, lang)
 
   return (
     <div className={styles.card} style={{ '--mockup-bg': mockupBg || '#f0e8e5' }}>
@@ -18,7 +21,7 @@ export default function CaseCard({ caseData }) {
         {mockupImage ? (
           <img
             src={mockupImage}
-            alt={`${title} mockup`}
+            alt={t.mockupAlt(title)}
             className={styles.mockupImg}
           />
         ) : (
@@ -47,8 +50,8 @@ export default function CaseCard({ caseData }) {
         </div>
 
         {!isNDA && (
-          <Link to={`/case/${id}`} className={styles.viewLink}>
-            View case →
+          <Link to={`/case/${id}`} className={styles.viewLink} data-click-sound>
+            {t.viewCase}
           </Link>
         )}
       </div>

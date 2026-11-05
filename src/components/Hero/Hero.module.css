@@ -2,8 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 98px 30px 118px;
-  min-height: 600px;
+  padding: 56px 30px 108px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -28,18 +27,19 @@
 
 .heading {
   font-size: 90px;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 1.015;
   letter-spacing: -3px;
-  color: var(--muted);
-}
-
-.dark {
   color: var(--text);
 }
 
-.muted {
-  color: var(--muted);
+.secondary {
+  display: block;
+  margin-top: 0.25em;
+  font-size: 0.711em;
+  font-weight: 400;
+  letter-spacing: -0.033em;
+  text-wrap: balance;
 }
 
 @media (max-width: 1200px) {
@@ -50,8 +50,7 @@
 
 @media (max-width: 767px) {
   .hero {
-    padding: 60px 20px 80px;
-    min-height: unset;
+    padding: 32px 20px 68px;
   }
 
   .heading {

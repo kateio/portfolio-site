@@ -8,13 +8,14 @@
   --bg: #f6f7fa;
   --bg-card: #ffffff;
   --text: #27272e;
-  --muted: #989bbe;
+  --muted: #6e6e73;
   --tag-bg: #dbdef5;
-  --btn-bg: #dbdef5;
+  --btn-bg: #27272e;
+  --btn-text: #ffffff;
   --nda-red: #d70000;
   --border: rgba(39, 39, 46, 0.08);
-  --font: 'Manrope', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  --card-radius: 40px;
+  --font: 'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
+  --card-radius: 28px;
 }
 
 html {
@@ -53,6 +54,10 @@ button {
   color: inherit;
 }
 
+html:has(dialog[open]) {
+  overflow: hidden;
+}
+
 ::selection {
   background: var(--text);
   color: var(--bg);
@@ -60,6 +65,6 @@ button {
 
 @media (max-width: 767px) {
   :root {
-    --card-radius: 32px;
+    --card-radius: 24px;
   }
 }
