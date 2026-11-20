@@ -1,0 +1,299 @@
+/* Wider than Home (1280px) so the screens can be larger: up to 1440px
+   content, same 30px side padding. Nav follows via --page-max. */
+.layout {
+  display: grid;
+  grid-template-columns: 360px minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 40px 30px 0;
+}
+
+/* ── Left: sticky info card ── */
+.info {
+  position: sticky;
+  top: 32px;
+}
+
+.infoInner {
+  background: var(--bg-card);
+  border-radius: var(--card-radius);
+  padding: 36px 32px;
+  display: flex;
+  flex-direction: column;
+}
+
+.year {
+  font-size: var(--fs-meta);
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.title {
+  font-size: var(--fs-h1);
+  font-weight: 500;
+  color: var(--text);
+  letter-spacing: -1px;
+  line-height: 1.14;
+  margin-bottom: 20px;
+}
+
+.lead {
+  font-size: var(--fs-body);
+  line-height: 1.5;
+  color: var(--text);
+  margin-bottom: 24px;
+}
+
+.tags {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+
+.tag {
+  background: var(--bg);
+  border-radius: 8px;
+  padding: 7px 14px;
+  font-size: var(--fs-small);
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.role {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+
+.label {
+  font-size: var(--fs-meta);
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.roleText {
+  font-size: var(--fs-body);
+  line-height: 1.5;
+  color: var(--text);
+}
+
+/* ── Right: bento of screen groups ── */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.tile {
+  grid-column: 1 / -1;
+  background: var(--bg-card);
+  border-radius: var(--card-radius);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.tileHalf {
+  grid-column: auto;
+}
+
+.tileHead {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-width: 560px;
+}
+
+
+.tileText {
+  font-size: var(--fs-body);
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.screens {
+  display: grid;
+  grid-template-columns: repeat(var(--count, 4), minmax(0, 1fr));
+  gap: 12px;
+  margin-top: auto;
+}
+
+.screenButton {
+  display: block;
+  width: 100%;
+  padding: 0;
+  cursor: zoom-in;
+  border-radius: 8.8% / 4.06%;
+}
+
+.screenButton:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 3px;
+}
+
+.screen {
+  width: 100%;
+  height: auto;
+  /* Matches the corner radius baked into the exported screens
+     (~60px of 750px), so the dark canvas corners are clipped at any size */
+  border-radius: 8.8% / 4.06%;
+  box-shadow: 0 0 0 1px var(--border);
+  background: var(--bg);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .screen {
+    transition: transform 0.3s ease;
+  }
+
+  .screenButton:hover .screen {
+    transform: translateY(-4px);
+  }
+}
+
+/* ── Text tiles: task + process, outcome ── */
+.textTile {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  gap: 40px;
+}
+
+.textCol {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.bodyText {
+  font-size: var(--fs-body);
+  line-height: 1.5;
+  color: var(--text);
+}
+
+.steps {
+  list-style: none;
+  counter-reset: step;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.step {
+  counter-increment: step;
+  display: flex;
+  gap: 12px;
+  font-size: var(--fs-body);
+  line-height: 1.5;
+  color: var(--text);
+}
+
+.step::before {
+  content: counter(step, decimal-leading-zero);
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+  min-width: 22px;
+}
+
+.outcomeTile {
+  gap: 10px;
+}
+
+
+/* ── Tablet ── */
+@media (max-width: 1100px) {
+  .layout {
+    grid-template-columns: 320px minmax(0, 1fr);
+    gap: 24px;
+  }
+
+  .infoInner {
+    padding: 32px 28px;
+  }
+
+  .tileHalf {
+    grid-column: 1 / -1;
+  }
+
+  .textTile {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
+
+  .tile {
+    padding: 28px;
+  }
+}
+
+/* ── Mobile: info on top, screens scroll sideways ── */
+@media (max-width: 767px) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+    padding: 24px 16px 0;
+  }
+
+  .info {
+    position: static;
+  }
+
+  .infoInner {
+    padding: 28px 24px;
+  }
+
+  .title {
+    letter-spacing: -0.5px;
+  }
+
+  .gallery {
+    gap: 16px;
+  }
+
+  .tile {
+    padding: 24px 0;
+    gap: 20px;
+  }
+
+  .tileHead {
+    padding: 0 24px;
+  }
+
+  .textTile,
+  .outcomeTile {
+    padding: 24px;
+  }
+
+  .screens {
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: 44%;
+    gap: 12px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 2px 24px;
+    scroll-padding: 0 24px;
+    scrollbar-width: none;
+  }
+
+  .screens::-webkit-scrollbar {
+    display: none;
+  }
+
+  .screenButton {
+    scroll-snap-align: start;
+  }
+}
+
+@media (max-width: 480px) {
+  .layout {
+    padding: 20px 12px 0;
+  }
+}

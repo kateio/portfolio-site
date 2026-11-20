@@ -16,6 +16,12 @@
   --border: rgba(39, 39, 46, 0.08);
   --font: 'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
   --card-radius: 28px;
+
+  /* Type scale, matching the Home page (case card, footer) */
+  --fs-h1: 40px;      /* case title */
+  --fs-body: 16px;    /* descriptions and body text */
+  --fs-meta: 16px;    /* year, labels */
+  --fs-small: 14px;   /* tags */
 }
 
 html {
@@ -63,8 +69,23 @@ html:has(dialog[open]) {
   color: var(--bg);
 }
 
+@media (max-width: 1024px) {
+  :root {
+    --fs-h1: 32px;
+  }
+}
+
 @media (max-width: 767px) {
   :root {
     --card-radius: 24px;
+    --fs-h1: 26px;
+    --fs-body: 15px;
+    --fs-meta: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --fs-h1: 22px;
   }
 }

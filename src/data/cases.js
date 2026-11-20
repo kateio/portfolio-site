@@ -69,28 +69,71 @@ export const cases = [
     year: '2024',
     isNDA: false,
     shortDesc: 'Приложение для активного отдыха. Спроектировала работу с картой и конструктор маршрутов',
-    tags: ['Мобильное приложение', 'Прототипирование', 'UX/UI', 'UI-кит'],
+    tags: ['Мобильное приложение', 'UX/UI', 'Прототипирование', 'UI-кит'],
     mockupImage: '/mockups/case-03.png',
     mockupBg: '#ffffff',
-    description: [
-      'ЮТИС — мобильное приложение для активного отдыха и организации досуга. Платформа помогает пользователям находить маршруты, планировать активности и делиться опытом с сообществом',
-      'В рамках проекта спроектировала интерфейс мобильного приложения: инструмент для работы с картой, создания и публикации маршрутов с GPS-треками и фото. Проработала офлайн-режим и навигацию в реальном времени. Ключевая особенность продукта — конструктор маршрутов, который позволяет пользователям не только создавать, но и монетизировать свой контент внутри платформы',
-    ],
-    sections: [
-      '/cases/utis/1-auth.png',
-      '/cases/utis/2-search.png',
-      '/cases/utis/3-card.png',
-      '/cases/utis/4-profile.png',
-      '/cases/utis/5-nav.png',
-    ],
+    caseStudy: {
+      dir: '/cases/utis',
+      lead: 'Мобильное приложение для активного отдыха. Помогает находить маршруты для походов, велопрогулок и других активностей, проходить их с навигатором и делиться впечатлениями с сообществом',
+      role: 'UX/UI-дизайнер. Спроектировала приложение целиком: от структуры и пользовательских сценариев до макетов, состояний экранов и UI-кита',
+      task: 'Сделать удобный инструмент для работы с картой, который решает задачи бизнеса. Результат измеряли конверсией в покупку маршрутов, оформлением подписки и количеством маршрутов, добавленных пользователями',
+      process: [
+        'Анализ конкурентов',
+        'User flow и вайрфреймы',
+        'Концептинг',
+        'Детализация макетов и UI-кит',
+        'Передача в разработку',
+      ],
+      outcome: 'Макеты, прототипы и UI-кит переданы в разработку',
+      groups: [
+        {
+          title: 'Онбординг',
+          screens: ['01-welcome', '02-email', '03-otp', '04-activity'],
+        },
+        {
+          title: 'Поиск',
+          screens: ['05-search-results', '06-search'],
+          half: true,
+        },
+        {
+          title: 'Профиль',
+          screens: ['15-profile', '16-saved'],
+          half: true,
+        },
+        {
+          title: 'Карточка маршрута',
+          screens: ['07-route-open', '08-route-scroll', '09-route-tabs', '10-route-map'],
+        },
+        {
+          title: 'Навигатор',
+          screens: ['11-nav-point', '12-nav-comments', '13-nav-poi', '14-nav-sheet'],
+        },
+      ],
+    },
     en: {
       title: 'UTIS mobile app',
       shortDesc: 'An app for active leisure. Designed the map experience and the route builder',
-      tags: ['Mobile', 'Prototyping', 'UX/UI', 'UI Kit'],
-      description: [
-        'UTIS is a mobile app for active leisure. The platform helps people find routes, plan activities and share their experience with the community.',
-        'I designed the app\'s interface: a tool for working with the map and for creating and publishing routes with GPS tracks and photos. I also worked out offline mode and real-time navigation. The key feature is the route builder, which lets users not only create content but also monetize it within the platform.',
-      ],
+      tags: ['Mobile', 'UX/UI', 'Prototyping', 'UI Kit'],
+      caseStudy: {
+        lead: 'A mobile app for active leisure. It helps people find routes for hiking, cycling and other activities, follow them with a navigator and share their experience with the community',
+        role: 'UX/UI designer. I designed the whole app, from structure and user scenarios to layouts, screen states and the UI kit',
+        task: 'Build a convenient map tool that serves the business. Success was measured by conversion to route purchases, subscriptions and the number of routes added by users',
+        process: [
+          'Competitor analysis',
+          'User flow and wireframes',
+          'Concepting',
+          'Detailed layouts and UI kit',
+          'Handoff to development',
+        ],
+        outcome: 'Layouts, prototypes and the UI kit were handed off to development',
+        groups: [
+          { title: 'Onboarding' },
+          { title: 'Search' },
+          { title: 'Profile' },
+          { title: 'Route page' },
+          { title: 'Navigator' },
+        ],
+      },
     },
   },
   {

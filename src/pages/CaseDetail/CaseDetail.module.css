@@ -124,6 +124,13 @@
   letter-spacing: -0.01em;
 }
 
+/* Case study pages use the wider grid */
+.bottomNavWide {
+  max-width: 1500px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
 /* ── Not found ── */
 .notFound {
   display: flex;

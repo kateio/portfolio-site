@@ -7,7 +7,8 @@
 
 .inner {
   width: 100%;
-  max-width: 1280px;
+  /* Case study pages widen this to match their grid */
+  max-width: var(--page-max, 1280px);
   height: 72px;
   display: flex;
   justify-content: space-between;

@@ -1,0 +1,122 @@
+.dialog {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.dialog[open] {
+  display: flex;
+}
+
+.dialog::backdrop {
+  background: rgba(39, 39, 46, 0.72);
+  backdrop-filter: blur(6px);
+}
+
+.stage {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.image {
+  height: min(88svh, 812px);
+  width: auto;
+  /* Same proportional corner clip as the thumbnails */
+  border-radius: 8.8% / 4.06%;
+  background: var(--bg-card);
+}
+
+.arrow,
+.close {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  color: var(--text);
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.2s;
+}
+
+.arrow:hover,
+.close:hover {
+  transform: scale(1.06);
+}
+
+.arrow:focus-visible,
+.close:focus-visible {
+  outline: 2px solid var(--bg-card);
+  outline-offset: 3px;
+}
+
+.close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  font-size: 16px;
+}
+
+.counter {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 14px;
+  color: var(--bg-card);
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .dialog[open] .image {
+    animation: viewerIn 0.25s ease;
+  }
+
+  @keyframes viewerIn {
+    from { opacity: 0; transform: scale(0.96); }
+    to   { opacity: 1; transform: scale(1); }
+  }
+}
+
+/* Phone: arrows sit under the screen */
+@media (max-width: 767px) {
+  .stage {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: center;
+    justify-items: center;
+    gap: 16px 24px;
+  }
+
+  .image {
+    grid-column: 1 / -1;
+    order: -1;
+    width: 100%;
+    height: auto;
+    max-width: min(86vw, calc(76svh * 375 / 812));
+  }
+
+  .close {
+    top: 16px;
+    right: 16px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .counter {
+    bottom: 20px;
+  }
+}

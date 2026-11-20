@@ -2,6 +2,21 @@ import { useParams, Link } from 'react-router-dom'
 import { cases, localizeCase } from '../../data/cases'
 import { useLanguage } from '../../i18n/useLanguage'
 import styles from './CaseDetail.module.css'
+import CaseStudy from './CaseStudy'
+
+// The English caseStudy only carries text, so merge it onto the base
+// (screens, layout flags) by group index.
+function localizeStudy(caseData, lang) {
+  const base = caseData.caseStudy
+  if (!base) return null
+  const en = lang === 'en' ? caseData.en?.caseStudy : null
+  if (!en) return base
+  return {
+    ...base,
+    ...en,
+    groups: base.groups.map((g, i) => ({ ...g, ...en.groups?.[i] })),
+  }
+}
 
 export default function CaseDetail() {
   const { id } = useParams()
@@ -18,13 +33,17 @@ export default function CaseDetail() {
   }
 
   const { title, description, sections } = localizeCase(caseData, lang)
+  const study = localizeStudy(caseData, lang)
 
   const currentIndex = cases.findIndex((c) => c.id === id)
   const next = localizeCase(cases[(currentIndex + 1) % cases.length], lang)
-  const hasNextPage = Boolean(next.sections)
+  const hasNextPage = Boolean(next.sections || next.caseStudy)
 
   return (
     <main className={styles.main}>
+      {study ? (
+        <CaseStudy caseData={localizeCase(caseData, lang)} study={study} />
+      ) : (
       <div className={styles.container}>
         <h1 className={styles.title}>{title}</h1>
 
@@ -47,8 +66,9 @@ export default function CaseDetail() {
           />
         ))}
       </div>
+      )}
 
-      <div className={styles.bottomNav}>
+      <div className={`${styles.bottomNav} ${study ? styles.bottomNavWide : ''}`}>
         <Link to="/" className={styles.navBack}>{t.allProjects}</Link>
         {hasNextPage && (
           <Link to={`/case/${next.id}`} className={styles.navNext}>
