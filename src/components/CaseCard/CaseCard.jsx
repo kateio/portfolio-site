@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { localizeCase } from '../../data/cases'
 import { useLanguage } from '../../i18n/useLanguage'
+import { typograph } from '../../lib/typograph'
 import styles from './CaseCard.module.css'
 
 function LockIcon() {
@@ -40,12 +41,12 @@ export default function CaseCard({ caseData }) {
           )}
         </div>
 
-        <h3 className={styles.title}>{title}</h3>
-        <p className={styles.desc}>{shortDesc}</p>
+        <h3 className={styles.title}>{typograph(title)}</h3>
+        <p className={styles.desc}>{typograph(shortDesc)}</p>
 
         <div className={styles.tags}>
           {tags.map((tag) => (
-            <span key={tag} className={styles.tag}>{tag}</span>
+            <span key={tag} className={styles.tag}>{typograph(tag)}</span>
           ))}
         </div>
 
