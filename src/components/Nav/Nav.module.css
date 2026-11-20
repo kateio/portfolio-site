@@ -29,10 +29,10 @@
 
 /* White square with a back arrow (case pages) */
 .tile {
-  width: 80px;
-  height: 80px;
+  width: 50px;
+  height: 50px;
   flex-shrink: 0;
-  border-radius: 20px;
+  border-radius: 12px;
   background: var(--bg-card);
   display: flex;
   align-items: center;
@@ -46,13 +46,14 @@
 
 /* Home: logo straight on the page background, name set tight next to it
    so the two read as one sign */
+/* Logo and name match the 50px height of the buttons on the right */
 .brand {
-  gap: 10px;
+  gap: 8px;
 }
 
 .logo {
-  width: 76px;
-  height: 76px;
+  width: 50px;
+  height: 50px;
   flex-shrink: 0;
   transition: transform 0.2s;
 }
@@ -62,16 +63,16 @@
 }
 
 .brandName {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 500;
-  line-height: 1.05;
-  letter-spacing: -0.6px;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
   color: var(--text);
   white-space: nowrap;
 }
 
 .arrow {
-  font-size: 28px;
+  font-size: 22px;
   line-height: 1;
   color: var(--text);
 }
@@ -121,27 +122,27 @@
   }
 
   .tile {
-    width: 56px;
-    height: 56px;
-    border-radius: 16px;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
   }
 
   .logo {
-    width: 56px;
-    height: 56px;
+    width: 40px;
+    height: 40px;
   }
 
   .brand {
-    gap: 8px;
+    gap: 6px;
   }
 
   .brandName {
-    font-size: 18px;
-    letter-spacing: -0.4px;
+    font-size: 16px;
+    letter-spacing: -0.3px;
   }
 
   .arrow {
-    font-size: 22px;
+    font-size: 18px;
   }
 
   .identity {
