@@ -8,7 +8,9 @@ import LanguageProvider from './i18n/LanguageProvider'
 function ScrollToTop() {
   const { pathname } = useLocation()
   useEffect(() => {
-    window.scrollTo(0, 0)
+    // 'instant' overrides the global smooth scrolling, so a new page opens
+    // at the top instead of visibly scrolling up from the previous position
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
   }, [pathname])
   return null
 }
