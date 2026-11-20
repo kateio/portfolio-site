@@ -22,7 +22,7 @@ export default function CaseStudy({ caseData, study }) {
       <aside className={styles.info}>
         <div className={styles.infoInner}>
           <span className={styles.year}>{year}</span>
-          <h1 className={styles.title}>{title}</h1>
+          <h1 className={styles.title}>{typograph(title)}</h1>
           <p className={styles.lead}>{typograph(study.lead)}</p>
 
           {tags && (
@@ -97,7 +97,21 @@ export default function CaseStudy({ caseData, study }) {
 
         <section className={`${styles.tile} ${styles.outcomeTile}`}>
           <h2 className={styles.label}>{t.caseOutcome}</h2>
-          <p className={styles.bodyText}>{typograph(study.outcome)}</p>
+          {Array.isArray(study.outcome) ? (
+            <ul className={styles.metrics}>
+              {study.outcome.map((m) => (
+                <li key={m.value} className={styles.metric}>
+                  <span className={styles.metricValue}>{typograph(m.value)}</span>
+                  <span className={styles.metricText}>{typograph(m.text)}</span>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p className={styles.bodyText}>{typograph(study.outcome)}</p>
+          )}
+          {study.outcomeNote && (
+            <p className={styles.metricNote}>{typograph(study.outcomeNote)}</p>
+          )}
         </section>
       </div>
 

@@ -194,7 +194,7 @@ export const cases = [
       dir: '/cases/avito',
       lead: 'CRM для массового найма: отклики с Авито в едином рабочем пространстве рекрутера. Помогает быстро разбирать кандидатов, вести статусы и работать с воронкой найма',
       role: 'Продуктовый дизайнер в команде автоматизации найма. Перенесла CRM на новую дизайн-систему и развивала работу с откликами: фильтры, массовые действия, переходы в чат и мобильную версию',
-      task: 'Развить CRM после пилота: привести к новой дизайн-системе, обогатить функционалом и запустить на 100% работодателей. Ресёрч показал, что раздел перегружен и неочевиден: работодатели не замечали кнопки действий, не понимали индикацию новых сообщений и уходили в сторонние инструменты',
+      task: 'Развить CRM после пилота: привести к новой дизайн-системе, обогатить функционалом и запустить на 100% работодателей. Ресёрч показал, что раздел перегружен и неочевиден: работодатели не замечали кнопки действий, не понимали индикацию новых сообщений и уходили в сторонние инструменты. Успех измеряли тем, ведут ли работодатели найм в CRM, и конверсией откликов в контакт и собеседование',
       process: [
         'Ресёрч и обратная связь от работодателей',
         'Карта проблем и сценариев',
@@ -202,7 +202,13 @@ export const cases = [
         'Фильтры, массовые действия и чат',
         'Мобильная версия',
       ],
-      outcome: 'CRM раскатили на 100% работодателей. Они стали возвращаться в CRM и вести найм в ней вместо Excel и разрозненных каналов, выросло число приглашений на собеседование',
+      outcome: [
+        { value: '100%', text: 'работодателей получили CRM: после пилота продукт раскатили на всю аудиторию' },
+        { value: 'Retention ↑', text: 'работодатели возвращаются в CRM и ведут найм в ней, а не в Excel и разрозненных каналах' },
+        { value: 'Первые контакты ↑', text: 'выросло число кандидатов, которым рекрутеры пишут первое сообщение' },
+        { value: 'Собеседования ↑', text: 'выросла доля соискателей, приглашённых на собеседование из воронки CRM' },
+      ],
+      outcomeNote: 'Точные значения метрик под NDA',
       groups: [
         { title: 'Как было: MVP', screens: ['01-mvp'], desktop: true },
         { title: 'Как стало', screens: ['02-new'], desktop: true },
@@ -217,7 +223,7 @@ export const cases = [
       caseStudy: {
         lead: 'A CRM for mass hiring: Avito responses in a single recruiter workspace. It helps recruiters sort candidates quickly, track statuses and manage the hiring funnel',
         role: 'Product designer in the hiring automation team. I moved the CRM to the new design system and evolved work with responses: filters, bulk actions, jumping to chat and the mobile version',
-        task: 'Take the CRM beyond the pilot: move it to the new design system, add functionality and roll it out to 100% of employers. Research showed the section was overloaded and unclear: employers missed action buttons, didn’t understand new-message indicators and switched to third-party tools',
+        task: 'Take the CRM beyond the pilot: move it to the new design system, add functionality and roll it out to 100% of employers. Research showed the section was overloaded and unclear: employers missed action buttons, didn’t understand new-message indicators and switched to third-party tools. Success was measured by whether employers run hiring in the CRM and by conversion from response to contact and interview',
         process: [
           'Research and employer feedback',
           'Map of problems and scenarios',
@@ -225,7 +231,13 @@ export const cases = [
           'Filters, bulk actions and chat',
           'Mobile version',
         ],
-        outcome: 'The CRM was rolled out to 100% of employers. They kept coming back and ran hiring in it instead of Excel and scattered channels, and more candidates were invited to interviews',
+        outcome: [
+          { value: '100%', text: 'of employers got the CRM: after the pilot it was rolled out to the whole audience' },
+          { value: 'Retention ↑', text: 'employers come back and run hiring in the CRM instead of Excel and scattered channels' },
+          { value: 'First contacts ↑', text: 'more candidates receive a first message from recruiters' },
+          { value: 'Interviews ↑', text: 'a larger share of candidates from the CRM funnel get invited to interviews' },
+        ],
+        outcomeNote: 'Exact values are under NDA',
         groups: [
           { title: 'Before: the MVP' },
           { title: 'After' },

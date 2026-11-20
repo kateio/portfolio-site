@@ -33,7 +33,7 @@
   height: min(88svh, 812px);
   width: auto;
   /* Same proportional corner clip as the thumbnails */
-  border-radius: 8.8% / 4.06%;
+  border-radius: 11% / 5.08%;
   background: var(--bg-card);
 }
 
