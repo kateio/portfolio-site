@@ -27,7 +27,7 @@
   text-decoration: none;
 }
 
-/* White square with the logo (home) or a back arrow (case pages) */
+/* White square with a back arrow (case pages) */
 .tile {
   width: 80px;
   height: 80px;
@@ -44,9 +44,30 @@
   transform: scale(1.04);
 }
 
+/* Home: logo straight on the page background, name set tight next to it
+   so the two read as one sign */
+.brand {
+  gap: 10px;
+}
+
 .logo {
-  width: 60px;
-  height: 60px;
+  width: 76px;
+  height: 76px;
+  flex-shrink: 0;
+  transition: transform 0.2s;
+}
+
+.brand:hover .logo {
+  transform: rotate(-4deg);
+}
+
+.brandName {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.6px;
+  color: var(--text);
+  white-space: nowrap;
 }
 
 .arrow {
@@ -106,8 +127,17 @@
   }
 
   .logo {
-    width: 42px;
-    height: 42px;
+    width: 56px;
+    height: 56px;
+  }
+
+  .brand {
+    gap: 8px;
+  }
+
+  .brandName {
+    font-size: 18px;
+    letter-spacing: -0.4px;
   }
 
   .arrow {

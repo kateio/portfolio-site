@@ -20,11 +20,9 @@ export default function Nav() {
             <span className={styles.name}>{t.backToProjects}</span>
           </Link>
         ) : (
-          <Link to="/" className={styles.identity} aria-label={t.name}>
-            <span className={styles.tile}>
-              <img src="/logo.svg" alt="" className={styles.logo} />
-            </span>
-            <span className={styles.name}>
+          <Link to="/" className={`${styles.identity} ${styles.brand}`} aria-label={t.name}>
+            <img src="/logo.svg" alt="" className={styles.logo} />
+            <span className={styles.brandName}>
               {firstName}
               <br />
               {rest.join(' ')}
