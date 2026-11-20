@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { useLanguage } from '../../i18n/useLanguage'
 import { typograph } from '../../lib/typograph'
 import styles from './CaseStudy.module.css'
@@ -8,13 +8,6 @@ export default function CaseStudy({ caseData, study }) {
   const { t } = useLanguage()
   const { title, year, tags } = caseData
   const [viewer, setViewer] = useState({ group: null, index: null })
-
-  // Widen the site nav to this page's 1440px grid while it is shown.
-  useEffect(() => {
-    const root = document.documentElement
-    root.style.setProperty('--page-max', '1440px')
-    return () => root.style.removeProperty('--page-max')
-  }, [])
 
   const screensOf = (group) =>
     group.screens.map((name, i) => ({

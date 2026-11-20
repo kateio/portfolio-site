@@ -1,11 +1,10 @@
-/* Wider than Home (1280px) so the screens can be larger: up to 1440px
-   content, same 30px side padding. Nav follows via --page-max. */
+/* Page width from --page-max, plus the same 30px side padding as Home */
 .layout {
   display: grid;
   grid-template-columns: 360px minmax(0, 1fr);
   gap: 24px;
   align-items: start;
-  max-width: 1500px;
+  max-width: calc(var(--page-max) + 60px);
   margin: 0 auto;
   padding: 40px 30px 0;
 }

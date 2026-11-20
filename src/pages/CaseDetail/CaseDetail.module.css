@@ -126,7 +126,7 @@
 
 /* Case study pages use the wider grid */
 .bottomNavWide {
-  max-width: 1500px;
+  max-width: calc(var(--page-max) + 60px);
   padding-left: 30px;
   padding-right: 30px;
 }

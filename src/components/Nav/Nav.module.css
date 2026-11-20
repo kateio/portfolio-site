@@ -2,13 +2,15 @@
   position: static;
   display: flex;
   justify-content: center;
-  padding: 16px 120px;
+  /* Side padding + .inner padding = page padding (30 / 16 / 12px),
+     so the avatar lines up with the content edge */
+  padding: 16px 20px;
 }
 
 .inner {
   width: 100%;
-  /* Case study pages widen this to match their grid */
-  max-width: var(--page-max, 1280px);
+  /* + its own 10px side padding, so the avatar sits on the content edge */
+  max-width: calc(var(--page-max) + 20px);
   height: 72px;
   display: flex;
   justify-content: space-between;
@@ -68,7 +70,7 @@
 
 @media (max-width: 767px) {
   .nav {
-    padding: 12px 20px;
+    padding: 12px 8px;
   }
 
   .inner {
@@ -94,6 +96,10 @@
 }
 
 @media (max-width: 480px) {
+  .nav {
+    padding: 12px 4px;
+  }
+
   .name {
     display: none;
   }

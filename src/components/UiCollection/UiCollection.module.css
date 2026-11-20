@@ -6,7 +6,7 @@
 
 .inner {
   width: 100%;
-  max-width: 1280px;
+  max-width: var(--page-max);
   display: grid;
   gap: 38px;
 }

@@ -16,6 +16,7 @@
   --border: rgba(39, 39, 46, 0.08);
   --font: 'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
   --card-radius: 28px;
+  --page-max: 1440px;   /* content width of every page */
 
   /* Type scale, matching the Home page (case card, footer) */
   --fs-h1: 40px;      /* case title */
