@@ -37,28 +37,71 @@ export const cases = [
     year: '2024',
     isNDA: false,
     shortDesc: 'Мобильный банк с криптокошельком для рынка Азербайджана. Спроектировала приложение с нуля',
-    tags: ['Мобильное приложение', 'Прототипирование', 'UX/UI', 'UI-кит'],
+    tags: ['Мобильное приложение', 'UX/UI', 'Прототипирование', 'UI-кит'],
     mockupImage: '/mockups/case-02.png',
     mockupBg: '#ffffff',
-    description: [
-      'WIT — мобильный банк для азербайджанского рынка с интегрированным криптокошельком. Продукт объединяет управление фиатными и цифровыми активами в одном приложении, задавая новый стандарт для банковских сервисов с криптой в регионе',
-      'В рамках проекта спроектировала дизайн мобильного приложения с нуля: проработала архитектуру интерфейса, все экраны и их состояния. Учитывала специфику рынка и требования заказчика — продукт должен был сочетать привычный банковский опыт с функциональностью криптокошелька, оставаясь простым и понятным для пользователя и ориентированным на молодую аудиторию',
-    ],
-    sections: [
-      '/cases/wit/1-auth.png',
-      '/cases/wit/2-home.png',
-      '/cases/wit/3-card.png',
-      '/cases/wit/4-history.png',
-      '/cases/wit/7.png',
-    ],
+    caseStudy: {
+      dir: '/cases/wit',
+      lead: 'Мобильный банк с криптокошельком для рынка Азербайджана. Объединяет счета, карты и цифровые активы в одном приложении',
+      role: 'UX/UI-дизайнер. Спроектировала приложение с нуля: архитектуру интерфейса, все экраны и их состояния, UI-кит',
+      task: 'Задать новый стандарт банковских приложений с криптой: совместить привычный банковский опыт с криптокошельком и при этом сохранить простоту для молодой аудитории',
+      process: [
+        'Анализ конкурентов и рынка',
+        'User flow и архитектура',
+        'Концептинг',
+        'Детализация макетов и UI-кит',
+        'Передача в разработку',
+      ],
+      outcome: 'Макеты, прототипы и UI-кит переданы в разработку',
+      groups: [
+        {
+          title: 'Регистрация',
+          screens: ['01-start', '02-account', '03-form', '04-passport'],
+        },
+        {
+          title: 'Главная и криптокошелёк',
+          screens: ['05-home', '06-transfer', '07-topup', '08-wallet'],
+        },
+        {
+          title: 'Карта',
+          screens: ['09-card', '10-card-settings', '11-card-freeze', '12-card-blocked'],
+        },
+        {
+          title: 'История',
+          screens: ['13-history', '14-history-chart'],
+          half: true,
+        },
+        {
+          title: 'Настройки и профиль',
+          screens: ['15-settings', '16-settings-account'],
+          half: true,
+        },
+      ],
+    },
     en: {
       title: 'WIT mobile app',
       shortDesc: 'A mobile bank with a built-in crypto wallet for the Azerbaijani market. Designed the app from scratch',
-      tags: ['Mobile', 'Prototyping', 'UX/UI', 'UI Kit'],
-      description: [
-        'WIT is a mobile bank for the Azerbaijani market with an integrated crypto wallet. The product brings fiat and digital assets together in one app, setting a new standard for banking services with crypto in the region.',
-        'I designed the mobile app from scratch: the interface architecture, all the screens and their states. I took into account the specifics of the market and the client\'s requirements. The product had to combine a familiar banking experience with crypto wallet functionality while staying simple, clear and aimed at a young audience.',
-      ],
+      tags: ['Mobile', 'UX/UI', 'Prototyping', 'UI Kit'],
+      caseStudy: {
+        lead: 'A mobile bank with a crypto wallet for the Azerbaijani market. Accounts, cards and digital assets in one app',
+        role: 'UX/UI designer. I designed the app from scratch: the interface architecture, every screen and its states, and the UI kit',
+        task: 'Set a new standard for banking apps with crypto: combine a familiar banking experience with a crypto wallet while keeping it simple for a young audience',
+        process: [
+          'Competitor and market analysis',
+          'User flow and architecture',
+          'Concepting',
+          'Detailed layouts and UI kit',
+          'Handoff to development',
+        ],
+        outcome: 'Layouts, prototypes and the UI kit were handed off to development',
+        groups: [
+          { title: 'Sign-up' },
+          { title: 'Home and crypto wallet' },
+          { title: 'Card' },
+          { title: 'History' },
+          { title: 'Settings and profile' },
+        ],
+      },
     },
   },
   {
