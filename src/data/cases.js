@@ -113,7 +113,7 @@ export const cases = [
     isNDA: false,
     shortDesc: 'Приложение для активного отдыха. Спроектировала работу с картой и конструктор маршрутов',
     tags: ['Мобильное приложение', 'UX/UI', 'Прототипирование', 'UI-кит'],
-    mockupImage: '/mockups/case-03.png',
+    mockupImage: '/mockups/case-03-2026.png',
     mockupBg: '#ffffff',
     caseStudy: {
       dir: '/cases/utis',
