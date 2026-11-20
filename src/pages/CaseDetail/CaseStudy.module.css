@@ -149,6 +149,12 @@
   background: var(--bg);
 }
 
+/* Desktop screens: one per tile, full width, window-like corners */
+.tileDesktop .screenButton,
+.tileDesktop .screen {
+  border-radius: 12px;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .screen {
     transition: transform 0.3s ease;
@@ -288,6 +294,17 @@
 
   .screenButton {
     scroll-snap-align: start;
+  }
+
+  /* A desktop screen is already one per row, no sideways scrolling */
+  .tileDesktop .screens {
+    grid-auto-columns: 100%;
+    overflow: visible;
+  }
+
+  .tileDesktop .screenButton,
+  .tileDesktop .screen {
+    border-radius: 8px;
   }
 }
 

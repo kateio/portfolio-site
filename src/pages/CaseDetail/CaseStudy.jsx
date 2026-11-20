@@ -13,6 +13,7 @@ export default function CaseStudy({ caseData, study }) {
     group.screens.map((name, i) => ({
       src: `${study.dir}/${name}.png`,
       alt: `${title}: ${group.title}, ${i + 1}`,
+      desktop: Boolean(group.desktop),
     }))
   const openGroup = viewer.group === null ? null : study.groups[viewer.group]
 
@@ -58,7 +59,7 @@ export default function CaseStudy({ caseData, study }) {
         {study.groups.map((group, g) => (
           <section
             key={group.title}
-            className={`${styles.tile} ${group.half ? styles.tileHalf : ''}`}
+            className={`${styles.tile} ${group.half ? styles.tileHalf : ''} ${group.desktop ? styles.tileDesktop : ''}`}
           >
             <header className={styles.tileHead}>
               <h2 className={styles.label}>{group.title}</h2>
@@ -68,7 +69,9 @@ export default function CaseStudy({ caseData, study }) {
             </header>
             <div
               className={styles.screens}
-              style={{ '--count': group.screens.length }}
+              // Phone rows keep at least 4 columns so a 2-screen row in a
+              // full-width tile doesn't blow the phones up
+              style={{ '--count': group.desktop ? 1 : group.half ? group.screens.length : Math.max(group.screens.length, 4) }}
             >
               {screensOf(group).map((screen, i) => (
                 <button
@@ -83,8 +86,8 @@ export default function CaseStudy({ caseData, study }) {
                     alt=""
                     className={styles.screen}
                     loading="lazy"
-                    width={375}
-                    height={812}
+                    width={group.desktop ? 1600 : 375}
+                    height={group.desktop ? 1013 : 812}
                   />
                 </button>
               ))}

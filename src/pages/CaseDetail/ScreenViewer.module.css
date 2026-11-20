@@ -80,6 +80,12 @@
   font-variant-numeric: tabular-nums;
 }
 
+.imageDesktop {
+  height: auto;
+  width: min(80vw, calc(84svh * 1600 / 1013));
+  border-radius: 12px;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .dialog[open] .image {
     animation: viewerIn 0.25s ease;
@@ -107,6 +113,12 @@
     width: 100%;
     height: auto;
     max-width: min(86vw, calc(76svh * 375 / 812));
+  }
+
+  .imageDesktop {
+    width: 92vw;
+    max-width: 92vw;
+    border-radius: 8px;
   }
 
   .close {

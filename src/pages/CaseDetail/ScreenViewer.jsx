@@ -52,7 +52,11 @@ export default function ScreenViewer({ screens, index, onChange, onClose }) {
             </button>
           )}
 
-          <img src={screen.src} alt={screen.alt} className={styles.image} />
+          <img
+            src={screen.src}
+            alt={screen.alt}
+            className={`${styles.image} ${screen.desktop ? styles.imageDesktop : ''}`}
+          />
 
           {hasMany && (
             <button
